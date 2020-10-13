@@ -1,0 +1,8 @@
+#=================================================#
+# Spring Boot configuration for the "test" profile #
+#=================================================#
+spring:
+  application:
+    name: insurance-advisor
+  profiles:
+    active: test
