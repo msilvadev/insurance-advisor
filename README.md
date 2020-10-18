@@ -39,3 +39,21 @@ OBS: I would that you run with docker - more easy.
 | Spring Boot Starter Validation |
 | Apache Commons lang3 |
 | JUnit |
+
+### HEROKU
+
+This app was deployed on HEROKU if you want to test, you send send a HTTP POST to: https://insurance-advisor.herokuapp.com/v1/risk-analysis
+
+With this payload:
+
+`
+{
+  "age": 80,
+  "dependents": 2,
+  "house": {"ownership_status": "owned"},
+  "income": 0,
+  "marital_status": "married",
+  "risk_questions": [0, 1, 0],
+  "vehicle": {"year": 2018}
+}
+`
