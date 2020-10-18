@@ -1,29 +1,32 @@
 package br.com.insuranceadvisor.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 import java.util.Arrays;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Analysis {
-    @PositiveOrZero(message = "${age.positive}")
+
+    @PositiveOrZero(message = "{age.positive}")
     private int age;
 
-    @PositiveOrZero(message = "${dependents.positive}")
+    @PositiveOrZero(message = "{dependents.positive}")
     private int dependents;
 
     private HouseStatus house;
 
-    @Min(value = 0, message = "Age should not be less than 0")
+    @PositiveOrZero(message = "{income.positive}")
     private int income;
 
+    @JsonProperty("marital_status")
     private MaritalStatus maritalStatus;
 
-    @Size(min = 3, max = 3, message = "${risk.questions}")
-    private int[] risk_questions;
+    @JsonProperty("risk_questions")
+    @Size(min = 3, max = 3, message = "{risk.questions}")
+    private int[] riskQuestions;
 
     private Vehicle vehicle;
 
@@ -67,12 +70,12 @@ public class Analysis {
         this.maritalStatus = maritalStatus;
     }
 
-    public int[] getRisk_questions() {
-        return risk_questions;
+    public int[] getRiskQuestions() {
+        return riskQuestions;
     }
 
-    public void setRisk_questions(int[] risk_questions) {
-        this.risk_questions = risk_questions;
+    public void setRiskQuestions(int[] riskQuestions) {
+        this.riskQuestions = riskQuestions;
     }
 
     public Vehicle getVehicle() {
@@ -90,8 +93,8 @@ public class Analysis {
                 ", dependents=" + dependents +
                 ", house=" + house +
                 ", income=" + income +
-                ", maritalStatus=" + maritalStatus +
-                ", risk_questions=" + Arrays.toString(risk_questions) +
+                ", marital_status=" + maritalStatus +
+                ", risk_questions=" + Arrays.toString(riskQuestions) +
                 ", vehicle=" + vehicle +
                 '}';
     }

@@ -1,10 +1,14 @@
 package br.com.insuranceadvisor.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public enum MaritalStatus {
+    @JsonProperty("single")
     SINGLE("single"),
+    @JsonProperty("married")
     MARRIED("married");
 
     private static final Map<String, MaritalStatus> typeMap;

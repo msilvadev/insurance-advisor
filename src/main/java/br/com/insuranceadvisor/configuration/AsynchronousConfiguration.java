@@ -15,7 +15,7 @@ public class AsynchronousConfiguration {
         executor.setCorePoolSize(2);
         executor.setMaxPoolSize(2);
         executor.setQueueCapacity(500);
-        executor.setThreadNamePrefix("DonusChallange-");
+        executor.setThreadNamePrefix("InsuranceAdvisor-");
         executor.initialize();
         return executor;
     }

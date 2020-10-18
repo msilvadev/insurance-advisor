@@ -1,10 +1,14 @@
 package br.com.insuranceadvisor.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public enum OwnershipStatus {
+    @JsonProperty("owned")
     OWNED("owned"),
+    @JsonProperty("mortgaged")
     MORTGAGED("mortgaged");
 
     private static final Map<String, OwnershipStatus> typeMap;

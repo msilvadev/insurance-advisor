@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "${api.version}/risk-analysis", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "${api.version}/risk-analysis", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RiskAnalysisController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RiskAnalysisController.class);
 
@@ -31,13 +31,6 @@ public class RiskAnalysisController {
     public ResponseEntity<RiskProfile> analyse(@Valid @RequestBody Analysis toAnalysis) {
         LOGGER.info("Called RiskAnalysisController method analyse ({})", toAnalysis.toString());
 
-//        try {
-//            Account account = useCase.getAccount(cpf);
-//            return ResponseEntity.ok(account);
-//        } catch (NoSuchElementException ex){
-//            throw new AccountNotExistException(cpf, ex.getCause());
-//        }
-
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(useCase.calculateRisk(toAnalysis));
     }
 }
