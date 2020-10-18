@@ -37,4 +37,14 @@ public class Score {
     public void setLife(int life) {
         this.life = life;
     }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "auto=" + auto +
+                ", disability=" + disability +
+                ", home=" + home +
+                ", life=" + life +
+                '}';
+    }
 }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com</groupId>
 	<artifactId>insurance-advisor</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Insurance Advisor</name>
 	<description>Insurance Advisor - ORIGIN</description>
 
@@ -38,7 +38,6 @@
 			<version>2.0.1.Final</version>
 		</dependency>
 
-		<!-- biblioteca para poder pegar a causa das exceções  -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

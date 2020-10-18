@@ -1,0 +1,7 @@
+# APP
+  web:
+    build: .
+    expose:
+      - '8090'
+    ports:
+      - '8090:8090'
