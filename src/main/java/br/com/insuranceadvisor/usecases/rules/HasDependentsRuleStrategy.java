@@ -3,7 +3,9 @@ package br.com.insuranceadvisor.usecases.rules;
 import br.com.insuranceadvisor.model.Analysis;
 import br.com.insuranceadvisor.model.RiskProfile;
 import br.com.insuranceadvisor.usecases.Score;
+import org.springframework.stereotype.Component;
 
+@Component
 public class HasDependentsRuleStrategy implements RulesStrategy{
 
     @Override

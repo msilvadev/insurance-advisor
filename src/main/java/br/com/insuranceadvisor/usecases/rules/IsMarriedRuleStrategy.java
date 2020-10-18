@@ -4,7 +4,9 @@ import br.com.insuranceadvisor.model.Analysis;
 import br.com.insuranceadvisor.model.MaritalStatus;
 import br.com.insuranceadvisor.model.RiskProfile;
 import br.com.insuranceadvisor.usecases.Score;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IsMarriedRuleStrategy implements RulesStrategy{
 
     @Override

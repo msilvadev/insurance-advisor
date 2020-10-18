@@ -3,12 +3,14 @@ package br.com.insuranceadvisor.usecases.rules;
 import br.com.insuranceadvisor.model.Analysis;
 import br.com.insuranceadvisor.model.RiskProfile;
 import br.com.insuranceadvisor.usecases.Score;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IncomeAbove200000RuleStrategy implements RulesStrategy{
 
     @Override
     public void executeRule(Analysis toAnalysis, RiskProfile riskProfile, Score score) {
-        if (toAnalysis.getIncome() < 200_000) {
+        if (toAnalysis.getIncome() > 200000) {
             score.setAuto(score.getAuto() - 1);
             score.setDisability(score.getDisability() - 1);
             score.setHome(score.getHome() - 1);
