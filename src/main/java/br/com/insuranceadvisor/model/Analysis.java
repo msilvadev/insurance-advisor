@@ -1,5 +1,6 @@
 package br.com.insuranceadvisor.model;
 
+import br.com.insuranceadvisor.model.validator.EnumNamePattern;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,6 +23,7 @@ public class Analysis {
     private int income;
 
     @JsonProperty("marital_status")
+    @EnumNamePattern(regexp = "SINGLE|MARRIED")
     private MaritalStatus maritalStatus;
 
     @JsonProperty("risk_questions")

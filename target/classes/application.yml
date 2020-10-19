@@ -1,0 +1,17 @@
+#=================================================#
+# Spring Boot configuration for the "dev" profile #
+#=================================================#
+spring:
+  application:
+    name: insurance-advisor
+  profiles:
+    active: dev
+
+api:
+  version: v1/
+
+server:
+  port: 8090
+
+logging:
+  config: src/main/resources/logback-dev.xml

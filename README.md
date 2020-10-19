@@ -16,6 +16,7 @@ easier to identify the problem.
 
 ### Run with DOCKER
 
+`mvn clean install`
 `docker-compose build`
 `docker-compose up`
 
