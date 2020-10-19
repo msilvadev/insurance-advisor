@@ -11,7 +11,7 @@ DOCKER - I used docker and docker compose because simplify as we run our applica
 Tests - Was created integration tests, because we can validate full algorithm. But if we want, as the code was built
 is simple to create unit tests.
 
-LOGGER - I used logs because, with them, we can see all happens with our application. And if we need to troubleshoot is
+LOG - I used logs because, with them, we can see all happens with our application. And if we need to troubleshoot is
 easier to identify the problem.
 
 ### Run with DOCKER
