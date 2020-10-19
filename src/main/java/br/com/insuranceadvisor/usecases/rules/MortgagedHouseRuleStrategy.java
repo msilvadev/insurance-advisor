@@ -1,8 +1,8 @@
 package br.com.insuranceadvisor.usecases.rules;
 
-import br.com.insuranceadvisor.model.Analysis;
-import br.com.insuranceadvisor.model.OwnershipStatus;
-import br.com.insuranceadvisor.model.RiskProfile;
+import br.com.insuranceadvisor.models.Analysis;
+import br.com.insuranceadvisor.models.OwnershipStatus;
+import br.com.insuranceadvisor.models.RiskProfile;
 import br.com.insuranceadvisor.usecases.Score;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

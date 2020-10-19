@@ -32,10 +32,11 @@ Execute the command `java -jar -Xms512m -Xmx512m [***PATH WHERE YOU CLONE PROJEC
 
 OBS: I would that you run with docker - more easy.
 
-### Frameworks and libs
+### Language, Frameworks and libs
 
 | Frameworks and libs |
 | ------ |
+| Java 8 |
 | Spring Boot Starter Web |
 | Spring Boot Starter Validation |
 | Apache Commons lang3 |
@@ -43,7 +44,7 @@ OBS: I would that you run with docker - more easy.
 
 ### HEROKU
 
-This app was deployed on HEROKU if you want to test, you send send a HTTP POST to: https://insurance-advisor.herokuapp.com/v1/risk-analysis
+This app was deployed on HEROKU if you want to test, you can send a HTTP POST to: https://insurance-advisor.herokuapp.com/v1/risk-analysis
 
 With this payload:
 

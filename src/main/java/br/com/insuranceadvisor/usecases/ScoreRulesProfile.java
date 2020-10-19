@@ -1,7 +1,8 @@
 package br.com.insuranceadvisor.usecases;
 
-import br.com.insuranceadvisor.model.Analysis;
-import br.com.insuranceadvisor.model.RiskProfile;
+import br.com.insuranceadvisor.models.Analysis;
+import br.com.insuranceadvisor.models.RiskProfile;
+import br.com.insuranceadvisor.models.RiskProfileStatus;
 import br.com.insuranceadvisor.usecases.rules.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,10 +55,25 @@ public class ScoreRulesProfile {
         LOGGER.info("Final score calculated => {}", score.toString());
     }
 
+    public void checkIneligibleRule(Analysis toAnalysis, RiskProfile riskProfile, Score score) {
+        LOGGER.info("Checking Ineligible rule...");
+
+        ineligibleRuleStrategy.executeRule(toAnalysis, riskProfile, score);
+        RiskProfile riskProfileIneligible = new RiskProfile(riskProfile.getAuto(), riskProfile.getDisability(),
+                riskProfile.getHome(), riskProfile.getLife());
+
+        if (riskProfileIneligible.getDisability() == RiskProfileStatus.INELIGIBLE &&
+                riskProfileIneligible.getAuto() == RiskProfileStatus.INELIGIBLE &&
+                riskProfileIneligible.getHome() == RiskProfileStatus.INELIGIBLE) {
+            riskProfile.setDisability(riskProfileIneligible.getDisability());
+            riskProfile.setAuto(riskProfileIneligible.getAuto());
+            riskProfile.setHome(riskProfileIneligible.getHome());
+        }
+    }
+
     private void executeRules(Analysis toAnalysis, RiskProfile riskProfile, Score score) {
         LOGGER.info("Executing rules...");
 
-        ineligibleRuleStrategy.executeRule(toAnalysis, riskProfile, score);
         under30YearsRuleStrategy.executeRule(toAnalysis, riskProfile, score);
         between30And40YearsRuleStrategy.executeRule(toAnalysis, riskProfile, score);
         incomeAbove200000RuleStrategy.executeRule(toAnalysis, riskProfile, score);
